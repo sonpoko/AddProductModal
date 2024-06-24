@@ -7,7 +7,7 @@ export default class ModalWithSpinner extends LightningElement {
     openModal() {
         this.isModalOpen = true;
         this.isLoading = true;
-        
+
         // Simulate loading process
         setTimeout(() => {
             this.isLoading = false;

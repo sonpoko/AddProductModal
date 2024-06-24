@@ -11,9 +11,13 @@
                 </header>
                 <div class="slds-modal__content slds-p-around_medium">
                     <!-- スピナーを追加 -->
-                    <lightning-spinner if:true={isLoading} alternative-text="Loading"></lightning-spinner>
-                    <!-- モーダルの中身 -->
-                    <p if:false={isLoading}>Modal Content</p>
+                    <template if:true={isLoading}>
+                        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                    </template>
+                    <!-- モーダルの内容 -->
+                    <template if:false={isLoading}>
+                        <p>Modal Content</p>
+                    </template>
                 </div>
                 <footer class="slds-modal__footer">
                     <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
